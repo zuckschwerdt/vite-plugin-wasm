@@ -41,7 +41,7 @@ const wasmHelper = async (opts = {}, url: string) => {
     }
     const getRunningScript = ()=>{
       return ()=>{
-        return new Error().stack.match(/([^ \n])*([a-z]*:\/\/\/?)*?[a-z0-9\/\\]*\.js/ig)?.[0]
+        return new Error().stack.match(/([^ \n@])*([a-z]*:\/\/\/?)*?[a-z0-9\/\\]*\.js/ig)?.[0]
       }
     }
     const baseUrl = typeof window !== 'undefined' ? getBaseUrl() : ''
